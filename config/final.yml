@@ -1,0 +1,6 @@
+---
+blobstore:
+  provider: s3
+  options:
+    bucket_name: bigdata-boshrelease
+final_name: bigdata
