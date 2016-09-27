@@ -11,12 +11,15 @@ update:
   canary_watch_time: 1000-30000
   update_watch_time: 1000-30000
 
-jobs:
+instance_groups:
 
   - name: zookeeper
     networks:
       - name: bigdata1
 
+  - name: kafka
+    networks:
+      - name: bigdata1
 
 compilation:
   cloud_properties:

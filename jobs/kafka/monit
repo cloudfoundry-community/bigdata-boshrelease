@@ -1,0 +1,5 @@
+check process kafka
+  with pidfile /var/vcap/sys/run/kafka/kafka.pid
+  start program "/var/vcap/jobs/kafka/bin/monit_debugger kafka_ctl '/var/vcap/jobs/kafka/bin/ctl start'"
+  stop program "/var/vcap/jobs/kafka/bin/monit_debugger kafka_ctl '/var/vcap/jobs/kafka/bin/ctl stop'"
+  group vcap

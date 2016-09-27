@@ -1,0 +1,25 @@
+---
+name: kafka
+packages:
+- java
+- kafka
+templates:
+  bin/ctl: bin/ctl
+  bin/monit_debugger: bin/monit_debugger
+  config/log4j.properties: config/log4j.properties
+  config/server.properties.erb: config/server.properties
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+consumes:
+- name: zookeepers
+  type: zookeeper
+
+properties:
+  listen_address:
+    description: "The address to listen for client connections"
+    default: "0.0.0.0"
+  listen_port:
+    description: "The port to listen for client connections"
+    default: 9092

@@ -8,7 +8,7 @@ director_uuid: (( param "please set director_uuid" ))
 
 releases: (( param "please set release" ))
 
-jobs: (( param "please set jobs" ))
+instance_groups: (( param "please set jobs" ))
 
 compilation:
   workers: 6
