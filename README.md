@@ -1,4 +1,14 @@
-# BOSH Release for bigdata
+# BOSH Release for collection of big data software
+
+WIP!
+
+BOSH Jobs for big data!
+
+Current list:
+* zookeeper - 3.4.9
+* kafka - 0.10.0.1
+* spark - 2.0.0
+* cassandra 3.7
 
 ## Usage
 

@@ -1,0 +1,7 @@
+set -e -u
+
+VERSION=2.0.0
+
+tar xzvf ${BOSH_COMPILE_TARGET}/spark/spark-${VERSION}-bin-hadoop2.7.tgz
+
+cp -a ${BOSH_COMPILE_TARGET}/spark-${VERSION}-bin-hadoop2.7/* ${BOSH_INSTALL_TARGET}/

@@ -1,0 +1,13 @@
+tickTime=2000
+dataDir=/var/vcap/store/zookeeper
+dataLogDir=/var/vcap/sys/log/zookeeper
+clientPort=<%= p('client_port') %>
+clientPortAddress=<%= p('listen_address') %>
+initLimit=5
+syncLimit=2
+
+<% peers = link('peers') %>
+
+<% peers.instances.each do |instance| %>
+server.<%= instance.index+1 %>=<%= instance.address %>:<%= peers.p('quorum_port') %>:<%= peers.p('leader_election_port') %>
+<% end %>

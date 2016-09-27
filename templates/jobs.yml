@@ -9,12 +9,12 @@ update:
   serial: false
 
 jobs:
-  - name: just_install_packages
+  - name: zookeeper
     templates:
-    - name: just_install_packages
+    - name: zookeeper
       release: bigdata
     instances: 1
-    persistent_disk: 0
+    persistent_disk: 2048
     resource_pool: small_z1
     networks: (( param "please set just_install_package networks" ))
 

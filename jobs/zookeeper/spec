@@ -1,0 +1,45 @@
+---
+name: zookeeper
+packages:
+- java
+- zookeeper
+templates:
+  bin/ctl: bin/ctl
+  bin/monit_debugger: bin/monit_debugger
+  config/zoo.cfg.erb: config/zoo.cfg
+  config/log4j.properties: config/log4j.properties
+  config/myid.erb: config/myid
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+consumes:
+- name: peers
+  type: zookeeper_peers
+
+provides:
+- name: conn
+  type: zookeeper
+  properties:
+  - client_port
+- name: peers
+  type: zookeeper_peers
+  properties:
+  - client_port
+  - quorum_port
+  - leader_election_port
+
+properties:
+
+  listen_address:
+    description: "The address to listen for client connections"
+    default: "0.0.0.0"
+  client_port:
+    description: "The port to listen for client connections"
+    default: 2181
+  quorum_port:
+    description: "Apache Zookeeper Client quorum port"
+    default: 2888
+  leader_election_port:
+    description: "Apache Zookeeper Client leader election port"
+    default: 3888

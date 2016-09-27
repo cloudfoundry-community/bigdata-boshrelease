@@ -1,0 +1,7 @@
+set -e -u
+
+VERSION=3.4.9
+
+tar xzvf ${BOSH_COMPILE_TARGET}/zookeeper/zookeeper-${VERSION}.tar.gz
+
+cp -a ${BOSH_COMPILE_TARGET}/zookeeper-${VERSION}/* ${BOSH_INSTALL_TARGET}/

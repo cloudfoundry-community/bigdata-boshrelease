@@ -1,0 +1,7 @@
+set -e -u
+
+VERSION=0.10.0.1
+
+tar xzvf ${BOSH_COMPILE_TARGET}/kafka/kafka_2.11-${VERSION}.tgz
+
+cp -a ${BOSH_COMPILE_TARGET}/kafka_2.11-${VERSION}/* ${BOSH_INSTALL_TARGET}/
