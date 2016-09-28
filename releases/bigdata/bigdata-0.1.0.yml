@@ -1,0 +1,56 @@
+---
+packages:
+- name: cassandra
+  version: 533c32a6173d1463a611f3e70394eec366d95c8f
+  fingerprint: 533c32a6173d1463a611f3e70394eec366d95c8f
+  sha1: 789bd8f01ec0e1ceba78bc18b2639bbb24701a18
+  dependencies: []
+- name: java
+  version: 0a00bda7f1409dd8f58a557e948ef5c33217f5ac
+  fingerprint: 0a00bda7f1409dd8f58a557e948ef5c33217f5ac
+  sha1: 679fe990fb1b105121ec289a5f5d031b3b0164f1
+  dependencies: []
+- name: kafka
+  version: 476fb5f48667bd5630347412ec4ff588776d3927
+  fingerprint: 476fb5f48667bd5630347412ec4ff588776d3927
+  sha1: ff156af57a9650bb2212af3057f3ece2f4480322
+  dependencies: []
+- name: spark
+  version: 2c408aead781deb8bb13e52eb5938883673e7501
+  fingerprint: 2c408aead781deb8bb13e52eb5938883673e7501
+  sha1: b1eec75f5a1e575f9457cb6269caa5b7c323275e
+  dependencies: []
+- name: zookeeper
+  version: 895eb93c48f872d1ee724a3c599d000167e3c96d
+  fingerprint: 895eb93c48f872d1ee724a3c599d000167e3c96d
+  sha1: b948618802582cebd876f085406b7fcd3df996c9
+  dependencies: []
+jobs:
+- name: cassandra
+  version: 7d1e6b3a171c3a581b558d403b42d0e9f549a0d1
+  fingerprint: 7d1e6b3a171c3a581b558d403b42d0e9f549a0d1
+  sha1: dafdb449071905a3cdfd073e99c02d8d69ffce69
+- name: kafka
+  version: 842ee68c5ee670b6027ee0e6db620c1a00de3230
+  fingerprint: 842ee68c5ee670b6027ee0e6db620c1a00de3230
+  sha1: 6f25ca73ccb5c1727bc445ec6e4b0576364f2d3b
+- name: spark-master
+  version: 2ef1e10d6cf25b56b6af9e91b125c633d742d0aa
+  fingerprint: 2ef1e10d6cf25b56b6af9e91b125c633d742d0aa
+  sha1: 42b535b386a01a6a2ab8da03e03832cf77f97205
+- name: spark-slave
+  version: c36c7aa094b57cd4c3ebfeb43f896547e80500f5
+  fingerprint: c36c7aa094b57cd4c3ebfeb43f896547e80500f5
+  sha1: b6fea257c3f8d99c2f1c1ad74c30664b78765003
+- name: zookeeper
+  version: e2d4e46df96535cbb7b4d7e94d81a2fe71e46458
+  fingerprint: e2d4e46df96535cbb7b4d7e94d81a2fe71e46458
+  sha1: a4a30aa2b58fff92a39d19e84e288e4d0dbf9c24
+license:
+  version: 8664f710d717d4d8b539a35813113cf20786e418
+  fingerprint: 8664f710d717d4d8b539a35813113cf20786e418
+  sha1: d4c56b0bed45b93ef1d81c94e00418657c4bc836
+commit_hash: b8981df7
+uncommitted_changes: true
+name: bigdata
+version: 0.1.0
