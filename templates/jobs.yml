@@ -38,7 +38,7 @@ instance_groups:
       provides:
         conn: {as: spark-master}
     instances: 1
-    persistent_disk: 0
+    persistent_disk: 1024
     resource_pool: small_z1
     networks: (( param "please set spark-master networks" ))
 
@@ -49,9 +49,18 @@ instance_groups:
       consumes:
         spark-master: {from: spark-master}
     instances: 1
+    persistent_disk: 1024
+    resource_pool: small_z1
+    networks: (( param "please set spark-slave networks" ))
+
+  - name: cassandra
+    jobs:
+    - name: cassandra
+      release: bigdata
+    instances: 1
     persistent_disk: 0
     resource_pool: small_z1
-    networks: (( param "please set spark-master networks" ))
+    networks: (( param "please set cassandra networks" ))
 
 networks: (( param "please set networks" ))
 

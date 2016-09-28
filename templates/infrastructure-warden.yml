@@ -28,7 +28,10 @@ instance_groups:
   - name: spark-slave
     networks:
       - name: bigdata1
-      
+
+  - name: cassandra
+    networks:
+      - name: bigdata1
 compilation:
   cloud_properties:
     name: random
