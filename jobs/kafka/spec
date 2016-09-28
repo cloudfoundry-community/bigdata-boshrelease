@@ -17,9 +17,6 @@ consumes:
   type: zookeeper
 
 properties:
-  listen_address:
-    description: "The address to listen for client connections"
-    default: "0.0.0.0"
   listen_port:
     description: "The port to listen for client connections"
     default: 9092

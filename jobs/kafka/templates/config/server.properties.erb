@@ -27,7 +27,7 @@ broker.id=<%= spec.index+1 %>
 #     listeners = security_protocol://host_name:port
 #   EXAMPLE:
 #     listeners = PLAINTEXT://your.host.name:9092
-listeners=PLAINTEXT://<%= p("listen_address") %>:<%= p("listen_port") %>
+listeners=PLAINTEXT://<%= spec.address %>:<%= p("listen_port") %>
 
 # Hostname and port the broker will advertise to producers and consumers. If not set,
 # it uses the value for "listeners" if configured.  Otherwise, it will use the value
