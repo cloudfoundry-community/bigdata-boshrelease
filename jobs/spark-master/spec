@@ -1,0 +1,28 @@
+---
+name: spark-master
+packages:
+- java
+- spark
+templates:
+  bin/ctl: bin/ctl
+  bin/monit_debugger: bin/monit_debugger
+  config/log4j.properties: config/log4j.properties
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+
+provides:
+- name: conn
+  type: spark-master
+  properties:
+  - listen_port
+
+properties:
+
+  listen_port:
+    description: "The port to listen for connections"
+    default: 7077
+  listen_web_port:
+    description: "The port to listen for ui"
+    default: 8080

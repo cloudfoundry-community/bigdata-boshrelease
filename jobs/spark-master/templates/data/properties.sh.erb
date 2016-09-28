@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# job template binding variables
+
+# job name & index of this VM within cluster
+# e.g. JOB_NAME=redis, JOB_INDEX=0
+export NAME='<%= name %>'
+export JOB_INDEX=<%= index %>
+# full job name, like redis/0 or webapp/3
+export JOB_FULL="$NAME/$JOB_INDEX"
+
+export SPARK_MASTER_HOST=<%= spec.address %>
+export SPARK_MASTER_PORT=<%= p("listen_port") %>
+export SPARK_MASTER_WEBUI_PORT=<%= p("listen_web_port") %>
+export SPARK_LOCAL_DIRS=/var/vcap/store/spark-master

@@ -18,7 +18,7 @@ instance_groups:
     instances: 1
     persistent_disk: 2048
     resource_pool: small_z1
-    networks: (( param "please set just_install_package networks" ))
+    networks: (( param "please set zookeeper networks" ))
 
   - name: kafka
     jobs:
@@ -29,7 +29,29 @@ instance_groups:
     instances: 1
     persistent_disk: 0
     resource_pool: small_z1
-    networks: (( param "please set just_install_package networks" ))
+    networks: (( param "please set kafka networks" ))
+
+  - name: spark-master
+    jobs:
+    - name: spark-master
+      release: bigdata
+      provides:
+        conn: {as: spark-master}
+    instances: 1
+    persistent_disk: 0
+    resource_pool: small_z1
+    networks: (( param "please set spark-master networks" ))
+
+  - name: spark-slave
+    jobs:
+    - name: spark-slave
+      release: bigdata
+      consumes:
+        spark-master: {from: spark-master}
+    instances: 1
+    persistent_disk: 0
+    resource_pool: small_z1
+    networks: (( param "please set spark-master networks" ))
 
 networks: (( param "please set networks" ))
 

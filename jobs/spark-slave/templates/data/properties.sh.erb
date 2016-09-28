@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# job template binding variables
+
+# job name & index of this VM within cluster
+# e.g. JOB_NAME=redis, JOB_INDEX=0
+export NAME='<%= name %>'
+export JOB_INDEX=<%= index %>
+# full job name, like redis/0 or webapp/3
+export JOB_FULL="$NAME/$JOB_INDEX"
+
+export SPARK_WORKER_WEBUI_PORT=<%= p("listen_web_port") %>
+export SPARK_WORKER_DIR=/var/vcap/store/spark-slave

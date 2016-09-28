@@ -21,6 +21,14 @@ instance_groups:
     networks:
       - name: bigdata1
 
+  - name: spark-master
+    networks:
+      - name: bigdata1
+
+  - name: spark-slave
+    networks:
+      - name: bigdata1
+      
 compilation:
   cloud_properties:
     name: random
