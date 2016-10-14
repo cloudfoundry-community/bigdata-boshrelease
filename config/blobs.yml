@@ -1,8 +1,4 @@
 ---
-cassandra/apache-cassandra-3.7-bin.tar.gz:
-  object_id: fbd658b2-4567-44f0-b946-0eb446561524
-  sha: 358093c1b7a6fa4af659ee25e992cf2bfd08c53c
-  size: 35592452
 java/jdk-8u102-linux-x64.tar.gz:
   object_id: b48c6916-7d75-4240-a3b4-6616cd5166b4
   sha: 01e57a2f73bd908ecc99cd9a32740062e4cf0ec3
@@ -11,10 +7,6 @@ kafka/kafka_2.11-0.10.0.1.tgz:
   object_id: cf981bdc-85a9-4ac9-988e-0c2ab2891469
   sha: 47f077450dac989313b807017a8dbd5cb447b1ad
   size: 31831257
-spark/spark-2.0.0-bin-hadoop2.7.tgz:
-  object_id: 50ed55e8-fb79-45a7-a00b-28389eaa8253
-  sha: 296ca1576d46307ac46e7a106fa492ce184af325
-  size: 186354175
 zookeeper/zookeeper-3.4.9.tar.gz:
   object_id: e1420f54-58bc-4879-b044-b925479c68d8
   sha: 0285717bf5ea87a7a36936bf37851d214a32bb99
