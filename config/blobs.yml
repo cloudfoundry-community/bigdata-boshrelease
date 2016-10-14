@@ -19,3 +19,11 @@ zookeeper/zookeeper-3.4.9.tar.gz:
   object_id: e1420f54-58bc-4879-b044-b925479c68d8
   sha: 0285717bf5ea87a7a36936bf37851d214a32bb99
   size: 22724574
+cassandra/apache-cassandra-3.9-bin.tar.gz:
+  object_id: 00e8b439-94df-439a-8940-e8882789cddf
+  sha: 8f3d37880827284964bc353a94a69fd256d62b06
+  size: 36719829
+spark/spark-2.0.1-bin-hadoop2.7.tgz:
+  object_id: 2c73a7e7-1dec-4ab8-8bd0-553dec1a15c5
+  sha: cab2eaf69e17e968e79aa09b6d55c140a87f86ac
+  size: 187275308
