@@ -19,9 +19,8 @@ case $1 in
     echo $$ > $PIDFILE
 
 
-    exec chpst -u vcap:vcap /var/vcap/packages/java/jdk/bin/java \
-         -cp /var/vcap/jobs/spark-slave/config:/var/vcap/packages/spark/jars/* \
-         -Xmx1g org.apache.spark.deploy.worker.Worker --webui-port <%= p("listen_web_port") %> \
+    exec chpst -u vcap:vcap $SPARK_HOME/bin/spark-class org.apache.spark.deploy.worker.Worker \
+         --webui-port <%= p("listen_web_port") %> \
          <%= master.instances.first.address %>:<%= master.p('listen_port') %> \
          >>$LOG_DIR/$JOB_NAME.log 2>&1
 

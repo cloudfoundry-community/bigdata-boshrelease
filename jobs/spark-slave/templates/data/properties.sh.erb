@@ -9,5 +9,8 @@ export JOB_INDEX=<%= index %>
 # full job name, like redis/0 or webapp/3
 export JOB_FULL="$NAME/$JOB_INDEX"
 
+export SPARK_LOCAL_IP=<%= spec.address %>
 export SPARK_WORKER_WEBUI_PORT=<%= p("listen_web_port") %>
 export SPARK_WORKER_DIR=/var/vcap/store/spark-slave
+export SPARK_LOCAL_DIRS=/var/vcap/store/spark-slave
+export SPARK_HOME=/var/vcap/packages/spark
