@@ -2,4 +2,4 @@
 name: kafka
 dependencies: []
 files:
-- kafka/*
+- kafka/kafka_*

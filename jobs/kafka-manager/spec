@@ -1,0 +1,21 @@
+---
+name: kafka-manager
+packages:
+- java
+- kafka-manager
+templates:
+  bin/ctl: bin/ctl
+  bin/monit_debugger: bin/monit_debugger
+  config/application.conf: config/application.conf
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+consumes:
+- name: zookeepers
+  type: zookeeper
+
+properties:
+  listen_port:
+    description: "The port to listen for http connections"
+    default: 8080

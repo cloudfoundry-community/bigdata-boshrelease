@@ -1,0 +1,7 @@
+set -e -u
+
+VERSION=1.3.3.4
+
+unzip ${BOSH_COMPILE_TARGET}/kafka/kafka-manager-${VERSION}.zip
+
+cp -a ${BOSH_COMPILE_TARGET}/kafka-manager-${VERSION}/* ${BOSH_INSTALL_TARGET}/

@@ -16,6 +16,8 @@ instance_groups:
       release: bigdata
     - name: kafka
       release: bigdata
+    - name: kafka-manager
+      release: bigdata
     instances: 1
     persistent_disk: 0
     resource_pool: small_z1
