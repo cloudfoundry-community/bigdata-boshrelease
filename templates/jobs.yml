@@ -9,23 +9,13 @@ update:
   serial: false
 
 instance_groups:
-  - name: zookeeper
-    jobs:
-    - name: zookeeper
-      release: bigdata
-      provides:
-        conn: {as: zks}
-    instances: 1
-    persistent_disk: 2048
-    resource_pool: small_z1
-    networks: (( param "please set zookeeper networks" ))
 
   - name: kafka
     jobs:
+    - name: zookeeper
+      release: bigdata
     - name: kafka
       release: bigdata
-      consumes:
-        zookeepers: {from: zks}
     instances: 1
     persistent_disk: 0
     resource_pool: small_z1

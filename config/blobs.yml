@@ -1,21 +1,32 @@
----
-java/jdk-8u102-linux-x64.tar.gz:
-  object_id: b48c6916-7d75-4240-a3b4-6616cd5166b4
-  sha: 01e57a2f73bd908ecc99cd9a32740062e4cf0ec3
-  size: 181435897
-kafka/kafka_2.11-0.10.0.1.tgz:
-  object_id: cf981bdc-85a9-4ac9-988e-0c2ab2891469
-  sha: 47f077450dac989313b807017a8dbd5cb447b1ad
-  size: 31831257
-zookeeper/zookeeper-3.4.9.tar.gz:
-  object_id: e1420f54-58bc-4879-b044-b925479c68d8
-  sha: 0285717bf5ea87a7a36936bf37851d214a32bb99
-  size: 22724574
 cassandra/apache-cassandra-3.9-bin.tar.gz:
+  size: 36719829
   object_id: 00e8b439-94df-439a-8940-e8882789cddf
   sha: 8f3d37880827284964bc353a94a69fd256d62b06
-  size: 36719829
+cassandra/apache-cassandra-3.10-bin.tar.gz:
+  size: 37608621
+  object_id: d3c534ae-3701-4cd3-5160-4a6769be083d
+  sha: 1148ec0de5e596520249769e57a91ddbebffa912
+java/jdk-8u102-linux-x64.tar.gz:
+  size: 181435897
+  object_id: b48c6916-7d75-4240-a3b4-6616cd5166b4
+  sha: 01e57a2f73bd908ecc99cd9a32740062e4cf0ec3
+kafka/kafka_2.11-0.10.0.1.tgz:
+  size: 31831257
+  object_id: cf981bdc-85a9-4ac9-988e-0c2ab2891469
+  sha: 47f077450dac989313b807017a8dbd5cb447b1ad
+kafka/kafka_2.12-0.10.2.0.tgz:
+  size: 34021573
+  object_id: 837142ef-1c6c-4a00-6491-33fe646d3755
+  sha: 655a4b415b0913117ebff88888ea526a3c2a4a06
 spark/spark-2.0.1-bin-hadoop2.7.tgz:
+  size: 187275308
   object_id: 2c73a7e7-1dec-4ab8-8bd0-553dec1a15c5
   sha: cab2eaf69e17e968e79aa09b6d55c140a87f86ac
-  size: 187275308
+spark/spark-2.1.0-bin-hadoop2.7.tgz:
+  size: 195636829
+  object_id: 852de07a-94e9-41bc-6ccf-9d60780310c6
+  sha: 9d1188efbbc92ba6aa0b834ea684d00fa7b63e39
+zookeeper/zookeeper-3.4.9.tar.gz:
+  size: 22724574
+  object_id: e1420f54-58bc-4879-b044-b925479c68d8
+  sha: 0285717bf5ea87a7a36936bf37851d214a32bb99

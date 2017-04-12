@@ -1,6 +1,6 @@
 set -e -u
 
-VERSION=3.9
+VERSION=3.10
 
 tar xzvf ${BOSH_COMPILE_TARGET}/cassandra/apache-cassandra-${VERSION}-bin.tar.gz
 

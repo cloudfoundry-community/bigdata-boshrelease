@@ -13,10 +13,6 @@ update:
 
 instance_groups:
 
-  - name: zookeeper
-    networks:
-      - name: bigdata1
-
   - name: kafka
     networks:
       - name: bigdata1

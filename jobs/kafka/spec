@@ -5,6 +5,7 @@ packages:
 - kafka
 templates:
   bin/ctl: bin/ctl
+  bin/post-deploy: bin/post-deploy
   bin/monit_debugger: bin/monit_debugger
   config/log4j.properties: config/log4j.properties
   config/server.properties.erb: config/server.properties
@@ -20,3 +21,11 @@ properties:
   listen_port:
     description: "The port to listen for client connections"
     default: 9092
+
+  topics:
+    default: []
+    description: |-
+      List of topics to create
+      - name: test
+        replication_factor: 1
+        partitions: 1
