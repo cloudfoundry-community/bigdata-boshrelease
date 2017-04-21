@@ -13,6 +13,12 @@ templates:
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
 
+provides:
+- name: kafka_conn
+  type: conn
+  properties:
+  - listen_port
+
 consumes:
 - name: zookeepers
   type: zookeeper
