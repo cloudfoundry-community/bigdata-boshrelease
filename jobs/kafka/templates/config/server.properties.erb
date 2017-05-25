@@ -19,6 +19,9 @@
 # The id of the broker. This must be set to a unique integer for each broker.
 broker.id=<%= spec.index+1 %>
 
+# Switch to enable topic deletion or not, default value is false
+delete.topic.enable=<%= p("delete_topic") %>
+
 ############################# Socket Server Settings #############################
 
 # The address the socket server listens on. It will get the value returned from

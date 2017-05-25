@@ -35,3 +35,7 @@ properties:
       - name: test
         replication_factor: 1
         partitions: 1
+
+  delete_topic:
+    description: "Switch to enable topic deletion or not"
+    default: false
