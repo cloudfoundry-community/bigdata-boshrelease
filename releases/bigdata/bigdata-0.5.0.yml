@@ -1,0 +1,65 @@
+---
+packages:
+- name: kafka
+  version: bb04b5c167d8bde8c8e33daf363d40bf09c8673f
+  fingerprint: bb04b5c167d8bde8c8e33daf363d40bf09c8673f
+  sha1: ca52b34c0351ccffcee1106ec4a277827ef5972b
+  dependencies: []
+- name: java
+  version: 0a00bda7f1409dd8f58a557e948ef5c33217f5ac
+  fingerprint: 0a00bda7f1409dd8f58a557e948ef5c33217f5ac
+  sha1: 679fe990fb1b105121ec289a5f5d031b3b0164f1
+  dependencies: []
+- name: spark
+  version: bf7baa981d1b5880b754077ee84c4bd39cb3fd42
+  fingerprint: bf7baa981d1b5880b754077ee84c4bd39cb3fd42
+  sha1: f21b117cfa3ecb23c87b66f6bfaa44ceb7e3c0b7
+  dependencies: []
+- name: zookeeper
+  version: 895eb93c48f872d1ee724a3c599d000167e3c96d
+  fingerprint: 895eb93c48f872d1ee724a3c599d000167e3c96d
+  sha1: b948618802582cebd876f085406b7fcd3df996c9
+  dependencies: []
+- name: cassandra
+  version: 9efbe433baff3c57d0d0c71a4caa9662f209e89f
+  fingerprint: 9efbe433baff3c57d0d0c71a4caa9662f209e89f
+  sha1: 503cc73d492d038d5ca7df6d4a62bca35f51fc28
+  dependencies: []
+- name: kafka-manager
+  version: 8de307fe4322aff16bd4e1b34e3265a6aff472f6
+  fingerprint: 8de307fe4322aff16bd4e1b34e3265a6aff472f6
+  sha1: 14cb6dea6c809d94ca63e48a143eaefa3454dee8
+  dependencies: []
+jobs:
+- name: kafka
+  version: a21883997d56b3ee66ed79f324ba05afb0c239a4
+  fingerprint: a21883997d56b3ee66ed79f324ba05afb0c239a4
+  sha1: 628b8472009a3a93d72edb951033a878f431a133
+- name: zookeeper
+  version: e2d4e46df96535cbb7b4d7e94d81a2fe71e46458
+  fingerprint: e2d4e46df96535cbb7b4d7e94d81a2fe71e46458
+  sha1: a4a30aa2b58fff92a39d19e84e288e4d0dbf9c24
+- name: cassandra
+  version: 7d1e6b3a171c3a581b558d403b42d0e9f549a0d1
+  fingerprint: 7d1e6b3a171c3a581b558d403b42d0e9f549a0d1
+  sha1: dafdb449071905a3cdfd073e99c02d8d69ffce69
+- name: kafka-manager
+  version: 45c5b07f5ccef1c62c99e7de82dc409d933c4025
+  fingerprint: 45c5b07f5ccef1c62c99e7de82dc409d933c4025
+  sha1: a4df6e910751bf3e673b5f2ba4be3cec35a073ff
+- name: spark-slave
+  version: 18b3fa158a20b9a94d073a02658185dfffcc4647
+  fingerprint: 18b3fa158a20b9a94d073a02658185dfffcc4647
+  sha1: 8fe864a1963442adbafd24d5c3fdca831c1c60f3
+- name: spark-master
+  version: 2ef1e10d6cf25b56b6af9e91b125c633d742d0aa
+  fingerprint: 2ef1e10d6cf25b56b6af9e91b125c633d742d0aa
+  sha1: 42b535b386a01a6a2ab8da03e03832cf77f97205
+license:
+  version: 8664f710d717d4d8b539a35813113cf20786e418
+  fingerprint: 8664f710d717d4d8b539a35813113cf20786e418
+  sha1: d4c56b0bed45b93ef1d81c94e00418657c4bc836
+commit_hash: 280e29bf
+uncommitted_changes: true
+name: bigdata
+version: 0.5.0
