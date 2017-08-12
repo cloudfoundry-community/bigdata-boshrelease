@@ -48,7 +48,6 @@ header "Choosing cloud-config options"
 vm_type=$(bosh2 int <(bosh2 cloud-config) --path /vm_types/0/name)
 disk_type=$(bosh2 int <(bosh2 cloud-config) --path /disk_types/0/name)
 network=$(bosh2 int <(bosh2 cloud-config) --path /networks/0/name)
-ig_name=${ig_name:-$release_name}
 
 mkdir -p tmp
 
@@ -63,7 +62,10 @@ cat > tmp/deployment.yml <<YAML
   value:
     name: ${release_name}
     version: latest
+YAML
 
+for ig_name in $(spruce json manifests/bigdata.yml | jq -r ".instance_groups[].name"); do
+cat >> tmp/deployment.yml <<YAML
 - type: replace
   path: /instance_groups/name=${ig_name}/vm_type
   value: ${vm_type}
@@ -76,6 +78,7 @@ cat > tmp/deployment.yml <<YAML
   path: /instance_groups/name=${ig_name}/networks
   value: [{name: ${vm_type}}]
 YAML
+done
 
 cat > tmp/vars.yml <<YAML
 --- {}
