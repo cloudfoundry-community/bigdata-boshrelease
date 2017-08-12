@@ -17,8 +17,12 @@ meta:
   target:   (( param "Please identify the name of the target Concourse CI" ))
   url:      (( param "Please specify the full url of the target Concourse CI" ))
   pipeline: (( concat meta.name "-boshrelease" ))
+  manifest:
+    vars:   "--- {}"
 
-  image:    starkandwayne/concourse
+  image:
+    name: starkandwayne/concourse
+    tag: latest
 
   aws:
     bucket:     (( concat meta.pipeline "-pipeline" ))
@@ -75,7 +79,8 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: (( grab meta.image ))
+              repository: (( grab meta.image.name ))
+              tag:        (( grab meta.image.tag ))
           inputs:
             - { name: git }
           run:
@@ -90,6 +95,7 @@ jobs:
             BOSH_DEPLOYMENT:      (( grab meta.bosh-lite.deployment ))
             TEST_ERRAND:          (( grab meta.test-errand || ~ ))
             MANIFEST_PATH:        (( concat "manifests/" meta.name ".yml" ))
+            MANIFEST_VARS:        (( grab meta.manifest.vars ))
       on_failure:
         put: notify
         params:
@@ -114,7 +120,8 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: (( grab meta.image ))
+              repository: (( grab meta.image.name ))
+              tag:        (( grab meta.image.tag ))
           inputs:
             - { name: git-pull-requests }
           run:
@@ -129,6 +136,7 @@ jobs:
             BOSH_DEPLOYMENT:      (( grab meta.bosh-lite.deployment-pr ))
             TEST_ERRAND:          (( grab meta.test-errand || ~ ))
             MANIFEST_PATH:        (( concat "manifests/" meta.name ".yml" ))
+            MANIFEST_VARS:        (( grab meta.manifest.vars ))
         on_success:
           put: git-pull-requests
           params:
@@ -145,7 +153,8 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: (( grab meta.image ))
+              repository: (( grab meta.image.name ))
+              tag:        (( grab meta.image.tag ))
           inputs:
             - { name: git-pull-requests }
           outputs:
@@ -228,7 +237,8 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: (( grab meta.image ))
+              repository: (( grab meta.image.name ))
+              tag:        (( grab meta.image.tag ))
           inputs:
             - name: version
             - name: git
