@@ -1,0 +1,73 @@
+---
+name: bigdata
+
+instance_groups:
+- name: kafka
+  azs: [z1]
+  instances: 1
+  vm_type: default
+  stemcell: default
+  networks: [{name: default}]
+  persistent_disk_type: 1GB
+  jobs:
+  - name: zookeeper
+    release: bigdata
+  - name: kafka
+    release: bigdata
+  - name: kafka-manager
+    release: bigdata
+
+- name: spark-master
+  azs: [z1]
+  instances: 1
+  vm_type: default
+  stemcell: default
+  networks: [{name: default}]
+  persistent_disk_type: 1GB
+  jobs:
+  - name: spark-master
+    release: bigdata
+    provides:
+      conn: {as: spark-master}
+
+- name: spark-slave
+  azs: [z1]
+  instances: 1
+  vm_type: default
+  stemcell: default
+  networks: [{name: default}]
+  persistent_disk_type: 1GB
+  jobs:
+  - name: spark-slave
+    release: bigdata
+    consumes:
+      spark-master: {from: spark-master}
+
+- name: cassandra
+  azs: [z1]
+  instances: 1
+  vm_type: default
+  stemcell: default
+  networks: [{name: default}]
+  persistent_disk_type: 1GB
+  jobs:
+  - name: cassandra
+    release: bigdata
+
+update:
+  canaries: 1
+  max_in_flight: 1
+  canary_watch_time: 1000-30000
+  update_watch_time: 1000-30000
+  serial: false
+
+stemcells:
+  - alias: default
+    os: ubuntu-trusty
+    version: latest
+
+releases:
+- name: bigdata
+  version: 0.5.0
+  url: https://github.com/cloudfoundry-community/bigdata-boshrelease/releases/download/v0.5.0/bigdata-0.5.0.tgz
+  sha1: TODO
