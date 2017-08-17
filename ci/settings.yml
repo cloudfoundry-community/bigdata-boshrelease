@@ -33,6 +33,7 @@ groups:
 - name: blobs
   jobs:
   - kafka
+  - zookeeper
 
 jobs:
 - name: kafka
@@ -63,8 +64,67 @@ jobs:
         BLOB_NAME:   kafka
         BLOB_BINARY: kafka*.tgz
         BLOB_URL:    https://github.com/kafka/kafka
-        BLOB_DESTINATION: kafka/kafka_2.12_${VERSION}.0.tgz
+        BLOB_DESTINATION: kafka/kafka_2.12-${VERSION}.0.tgz
         BLOB_CLEANUP:     kafka/kafka_2.*
+        AWS_ACCESS_KEY: (( grab meta.aws.access_key ))
+        AWS_SECRET_KEY: (( grab meta.aws.secret_key ))
+        BRANCH:         (( grab meta.github.branch ))
+    on_failure:
+      put: notify
+      params:
+        channel:  (( grab meta.slack.channel ))
+        username: (( grab meta.slack.username ))
+        icon_url: (( grab meta.slack.icon ))
+        text:     (( grab meta.slack.blob_failure ))
+  - put: git
+    params:
+      rebase: true
+      repository: pushme/git
+    on_success:
+      put: notify
+      params:
+        channel:  (( grab meta.slack.channel ))
+        username: (( grab meta.slack.username ))
+        icon_url: (( grab meta.slack.icon ))
+        text:     (( grab meta.slack.blob_success ))
+    on_failure:
+      put: notify
+      params:
+        channel:  (( grab meta.slack.channel ))
+        username: (( grab meta.slack.username ))
+        icon_url: (( grab meta.slack.icon ))
+        text:     (( grab meta.slack.blob_failure ))
+
+- name: zookeeper
+  public: true
+  plan:
+  - aggregate:
+    - { get: git }
+    - { get: zookeeper, trigger: true }
+  - task: update-blob
+    config:
+      image_resource:
+        type: docker-image
+        source:
+          repository: (( grab meta.image.name ))
+          tag:        (( grab meta.image.tag ))
+      platform: linux
+      inputs:
+      - name: git
+      - name: zookeeper
+      outputs:
+      - name: pushme
+      run:
+        path: ./git/ci/scripts/update-blob
+      params:
+        REPO_ROOT:   git
+        REPO_OUT:    pushme
+        BLOB_DIR:    zookeeper
+        BLOB_NAME:   zookeeper
+        BLOB_BINARY: zookeeper*.tar.gz
+        BLOB_URL:    https://archive.apache.org/dist/zookeeper/
+        BLOB_DESTINATION: zookeeper/zookeeper-${VERSION}.tgz
+        BLOB_CLEANUP:     zookeeper/zookeeper.*
         AWS_ACCESS_KEY: (( grab meta.aws.access_key ))
         AWS_SECRET_KEY: (( grab meta.aws.secret_key ))
         BRANCH:         (( grab meta.github.branch ))
@@ -104,6 +164,12 @@ resources:
   - name: kafka
     type: apache-directory-index
     source:
-      directory: https://archive.apache.org/dist/kafka
+      directory: https://archive.apache.org/dist/kafka/
       folder_pattern: $VERSION.0
       file_pattern: kafka_2.12-$VERSION.0.tgz
+  - name: zookeeper
+    type: apache-directory-index
+    source:
+      directory: https://archive.apache.org/dist/zookeeper/
+      folder_pattern: zookeeper-$VERSION
+      file_pattern: zookeeper-$VERSION.tar.gz
