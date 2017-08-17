@@ -14,6 +14,10 @@ kafka/kafka_2.12-0.10.2.0.tgz:
   size: 34021573
   object_id: 837142ef-1c6c-4a00-6491-33fe646d3755
   sha: 655a4b415b0913117ebff88888ea526a3c2a4a06
+kafka/kafka_2.12_${VERSION}.tgz:
+  size: 36644420
+  object_id: 0ba078e7-192e-4127-7684-045d393a11b1
+  sha: 3dac78b99cd84ff9a8c7b6d12025c391a2b34008
 spark/spark-2.1.0-bin-hadoop2.7.tgz:
   size: 195636829
   object_id: 852de07a-94e9-41bc-6ccf-9d60780310c6
