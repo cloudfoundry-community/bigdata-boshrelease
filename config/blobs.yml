@@ -1,7 +1,7 @@
-cassandra/apache-cassandra-3.10-bin.tar.gz:
-  size: 37608621
-  object_id: d3c534ae-3701-4cd3-5160-4a6769be083d
-  sha: 1148ec0de5e596520249769e57a91ddbebffa912
+cassandra/apache-cassandra-3.11.0-bin.tar.gz:
+  size: 37929669
+  object_id: 627fb678-646f-403c-4e7d-f3c8f812916d
+  sha: 96b84c1d178f8482e8832dfc850613e009e124dd
 java/jdk-8u102-linux-x64.tar.gz:
   size: 181435897
   object_id: b48c6916-7d75-4240-a3b4-6616cd5166b4
