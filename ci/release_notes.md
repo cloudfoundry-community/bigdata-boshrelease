@@ -19,3 +19,6 @@ Bumped https://archive.apache.org/dist/zookeeper/ to v3.4.10
 
 # spark
 Bumped https://archive.apache.org/dist/spark/ to v2.2.0
+
+# zookeeper
+Bumped https://archive.apache.org/dist/zookeeper/ to v3.4.10

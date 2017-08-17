@@ -18,7 +18,7 @@ spark/spark-2.2.0-bin-hadoop2.7.tgz:
   size: 203728858
   object_id: 0e056224-f2c8-46bb-72cb-92c83d230d11
   sha: e48dd30a62f8e6cf87920d931564929d00780a29
-zookeeper/zookeeper-3.4.10.tgz:
+zookeeper/zookeeper-3.4.10.tar.gz:
   size: 35042811
-  object_id: 1c74a98b-c183-4cad-77b9-60c5138f3c1e
+  object_id: 5004feb0-16f4-471f-7555-ddcc3f319692
   sha: eb2145498c5f7a0d23650d3e0102318363206fba
