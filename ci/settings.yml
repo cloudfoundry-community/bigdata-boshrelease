@@ -63,8 +63,8 @@ jobs:
         BLOB_NAME:   kafka
         BLOB_BINARY: kafka*.tgz
         BLOB_URL:    https://github.com/kafka/kafka
-        BLOB_DESTINATION: kafka/kafka_2.12_${VERSION}.tgz #
-        BLOB_CLEANUP:     kafka/kafka_2*.*
+        BLOB_DESTINATION: kafka/kafka_2.12_${VERSION}.0.tgz
+        BLOB_CLEANUP:     kafka/kafka_2.*
         AWS_ACCESS_KEY: (( grab meta.aws.access_key ))
         AWS_SECRET_KEY: (( grab meta.aws.secret_key ))
         BRANCH:         (( grab meta.github.branch ))
