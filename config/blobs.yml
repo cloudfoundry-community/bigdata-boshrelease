@@ -10,13 +10,9 @@ kafka/kafka-manager-1.3.3.4.zip:
   size: 60436159
   object_id: 6daa8153-a955-4c40-7c4b-b10ee701d374
   sha: 557d05692aa93c1e9ed577e266698e59649cd96e
-kafka/kafka_2.12-0.10.2.0.tgz:
-  size: 34021573
-  object_id: 837142ef-1c6c-4a00-6491-33fe646d3755
-  sha: 655a4b415b0913117ebff88888ea526a3c2a4a06
-kafka/kafka_2.12_${VERSION}.tgz:
+kafka/kafka_2.12_0.11.0.tgz:
   size: 36644420
-  object_id: 38065215-e74f-43d9-568a-e73411a8864e
+  object_id: ad0f5c92-16aa-46ba-58fb-816b4bbe7310
   sha: 3dac78b99cd84ff9a8c7b6d12025c391a2b34008
 spark/spark-2.1.0-bin-hadoop2.7.tgz:
   size: 195636829
