@@ -32,11 +32,71 @@ meta:
 groups:
 - name: blobs
   jobs:
+  - cassandra
   - kafka
   - spark
   - zookeeper
 
 jobs:
+- name: cassandra
+  public: true
+  plan:
+  - aggregate:
+    - { get: git }
+    - { get: cassandra, trigger: true }
+  - task: update-blob
+    config:
+      image_resource:
+        type: docker-image
+        source:
+          repository: (( grab meta.image.name ))
+          tag:        (( grab meta.image.tag ))
+      platform: linux
+      inputs:
+      - name: git
+      - name: cassandra
+      outputs:
+      - name: pushme
+      run:
+        path: ./git/ci/scripts/update-blob
+      params:
+        REPO_ROOT:   git
+        REPO_OUT:    pushme
+        BLOB_DIR:    cassandra
+        BLOB_NAME:   cassandra
+        BLOB_BINARY: apache-cassandra*.tar.gz
+        BLOB_URL:    https://archive.apache.org/dist/cassandra/
+        BLOB_DESTINATION: cassandra/apache-cassandra-${VERSION}-bin.tar.gz
+        BLOB_CLEANUP:     cassandra/apache-cassandra.*
+        AWS_ACCESS_KEY: (( grab meta.aws.access_key ))
+        AWS_SECRET_KEY: (( grab meta.aws.secret_key ))
+        BRANCH:         (( grab meta.github.branch ))
+    on_failure:
+      put: notify
+      params:
+        channel:  (( grab meta.slack.channel ))
+        username: (( grab meta.slack.username ))
+        icon_url: (( grab meta.slack.icon ))
+        text:     (( grab meta.slack.blob_failure ))
+  - put: git
+    params:
+      rebase: true
+      repository: pushme/git
+    on_success:
+      put: notify
+      params:
+        channel:  (( grab meta.slack.channel ))
+        username: (( grab meta.slack.username ))
+        icon_url: (( grab meta.slack.icon ))
+        text:     (( grab meta.slack.blob_success ))
+    on_failure:
+      put: notify
+      params:
+        channel:  (( grab meta.slack.channel ))
+        username: (( grab meta.slack.username ))
+        icon_url: (( grab meta.slack.icon ))
+        text:     (( grab meta.slack.blob_failure ))
+
 - name: kafka
   public: true
   plan:
@@ -221,6 +281,12 @@ resource_types:
     repository: mastertinner/apache-directory-index-resource
 
 resources:
+  - name: cassandra
+    type: apache-directory-index
+    source:
+      directory: https://archive.apache.org/dist/cassandra/
+      folder_pattern: $VERSION
+      file_pattern: apache-cassandra-$VERSION-bin.tar.gz
   - name: kafka
     type: apache-directory-index
     source:
