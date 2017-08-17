@@ -68,6 +68,6 @@ stemcells:
 
 releases:
 - name: bigdata
-  version: 0.5.0
-  url: https://github.com/cloudfoundry-community/bigdata-boshrelease/releases/download/v0.5.0/bigdata-0.5.0.tgz
-  sha1: TODO
+  version: 0.6.0
+  url: https://github.com/cloudfoundry-community/bigdata-boshrelease/releases/download/v0.6.0/bigdata-0.6.0.tgz
+  sha1: 10d7c816232aba771222479bb04b72596671adb5
