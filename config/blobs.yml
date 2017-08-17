@@ -14,10 +14,10 @@ kafka/kafka_2.12-0.11.0.0.tgz:
   size: 36644420
   object_id: 8a177c2f-60a3-4ab2-6f27-ef3ae27e4168
   sha: 3dac78b99cd84ff9a8c7b6d12025c391a2b34008
-spark/spark-2.1.0-bin-hadoop2.7.tgz:
-  size: 195636829
-  object_id: 852de07a-94e9-41bc-6ccf-9d60780310c6
-  sha: 9d1188efbbc92ba6aa0b834ea684d00fa7b63e39
+spark/spark-2.2.0-bin-hadoop2.7.tgz:
+  size: 203728858
+  object_id: 0e056224-f2c8-46bb-72cb-92c83d230d11
+  sha: e48dd30a62f8e6cf87920d931564929d00780a29
 zookeeper/zookeeper-3.4.10.tgz:
   size: 35042811
   object_id: 1c74a98b-c183-4cad-77b9-60c5138f3c1e
