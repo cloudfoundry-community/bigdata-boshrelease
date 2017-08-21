@@ -1,0 +1,6 @@
+---
+- type: replace
+  path: /releases/name=bigdata
+  value:
+    name: bigdata
+    version: latest

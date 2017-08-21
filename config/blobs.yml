@@ -2,10 +2,6 @@ cassandra/apache-cassandra-3.11.0-bin.tar.gz:
   size: 37929669
   object_id: 627fb678-646f-403c-4e7d-f3c8f812916d
   sha: 96b84c1d178f8482e8832dfc850613e009e124dd
-java/jdk-8u102-linux-x64.tar.gz:
-  size: 181435897
-  object_id: b48c6916-7d75-4240-a3b4-6616cd5166b4
-  sha: 01e57a2f73bd908ecc99cd9a32740062e4cf0ec3
 kafka/kafka-manager-1.3.3.4.zip:
   size: 60436159
   object_id: 6daa8153-a955-4c40-7c4b-b10ee701d374
@@ -14,6 +10,10 @@ kafka/kafka_2.12-0.11.0.0.tgz:
   size: 36644420
   object_id: 8a177c2f-60a3-4ab2-6f27-ef3ae27e4168
   sha: 3dac78b99cd84ff9a8c7b6d12025c391a2b34008
+openjdk/openjdk-1.8.0_101-x86_64-trusty.tar.gz:
+  size: 77696717
+  object_id: a06d4d64-0d5b-41c8-5edc-0c23e66efff6
+  sha: d77ee059e289ae52fb87812f1a2932268427dc26
 spark/spark-2.2.0-bin-hadoop2.7.tgz:
   size: 203728858
   object_id: 0e056224-f2c8-46bb-72cb-92c83d230d11

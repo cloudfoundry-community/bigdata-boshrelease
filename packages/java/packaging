@@ -1,7 +1,6 @@
 set -e -u
 
-tar xzvf ${BOSH_COMPILE_TARGET}/java/jdk-8u102-linux-x64.tar.gz
-
 mkdir -p ${BOSH_INSTALL_TARGET}/jdk
+cd ${BOSH_INSTALL_TARGET}/jdk
+tar zxvf ${BOSH_COMPILE_TARGET}/openjdk/openjdk-1.8.0_101-x86_64-trusty.tar.gz
 
-cp -a ${BOSH_COMPILE_TARGET}/jdk1.8.0_102/* ${BOSH_INSTALL_TARGET}/jdk
