@@ -1,0 +1,64 @@
+name: bigdata
+version: 0.7.0
+commit_hash: 314beaf
+uncommitted_changes: false
+jobs:
+- name: cassandra
+  version: 93f79c6cb1737264f001f86523c301f3891bb96b
+  fingerprint: 93f79c6cb1737264f001f86523c301f3891bb96b
+  sha1: f45b878507a1ba0c26d7d3901c02ca5f8907ea47
+- name: kafka
+  version: 8d844ac9dee85a4a08a085d16702845c35ffc724
+  fingerprint: 8d844ac9dee85a4a08a085d16702845c35ffc724
+  sha1: 3d37a1049a50ea5574b6a9e365262f043a000c4b
+- name: kafka-manager
+  version: d3da9ec1b79e1e6a5d4e5514a3f376ce343c46ef
+  fingerprint: d3da9ec1b79e1e6a5d4e5514a3f376ce343c46ef
+  sha1: 201da19293a4e4d9b309dc27ab9e6fd6ffc2d1e5
+- name: spark-master
+  version: 03f003dc2721885c5a4c7392f2786621ac92e27e
+  fingerprint: 03f003dc2721885c5a4c7392f2786621ac92e27e
+  sha1: 77ddd9514714d55d45bba3286d8a3a66aa9e241f
+- name: spark-slave
+  version: d03df0048444ef000f29b2a71e5da9f6de5caeb7
+  fingerprint: d03df0048444ef000f29b2a71e5da9f6de5caeb7
+  sha1: 8a789a800f7b89c8759ae35b29578836e88070ee
+- name: zookeeper
+  version: bfe2ef6b519092188bfb0d77d7c4f5878ccbd148
+  fingerprint: bfe2ef6b519092188bfb0d77d7c4f5878ccbd148
+  sha1: 94b390d5a4b5a058f57dcc6886cb7507efbffd7d
+packages:
+- name: cassandra
+  version: 764ecf01f3031f5fafeb98ff4ef90e4db4d35692
+  fingerprint: 764ecf01f3031f5fafeb98ff4ef90e4db4d35692
+  sha1: f46a0b6bda1fefd559df77ec964589326f475cf1
+  dependencies: []
+- name: java
+  version: b289429827abfaa42e91809625b1a368c3d9a8fc
+  fingerprint: b289429827abfaa42e91809625b1a368c3d9a8fc
+  sha1: 39cd428dcce5b32b5ec4532096e8a9abf75d2a27
+  dependencies: []
+- name: kafka
+  version: 517a95f383ada5988c8394ce57eb92fe7a9cbbe4
+  fingerprint: 517a95f383ada5988c8394ce57eb92fe7a9cbbe4
+  sha1: df90a482f5da567085e047f1af4c90d5ac3660c6
+  dependencies: []
+- name: kafka-manager
+  version: dae20e99e0af3e63fb50ceb30c8a4c995577c73a
+  fingerprint: dae20e99e0af3e63fb50ceb30c8a4c995577c73a
+  sha1: 14331013e33b7da8d83cd5b7654bbd06fc034e67
+  dependencies: []
+- name: spark
+  version: 3ba0c59ecd51d83712e657786f99e3f4028a887d
+  fingerprint: 3ba0c59ecd51d83712e657786f99e3f4028a887d
+  sha1: 785d6d35d18bad3e225f21973b751d17340ce82d
+  dependencies: []
+- name: zookeeper
+  version: 33c056c3206b52573d121f7379bf9cf94abe1296
+  fingerprint: 33c056c3206b52573d121f7379bf9cf94abe1296
+  sha1: 245a86458172a82aa2e6186bccc32d7705285fb7
+  dependencies: []
+license:
+  version: 8664f710d717d4d8b539a35813113cf20786e418
+  fingerprint: 8664f710d717d4d8b539a35813113cf20786e418
+  sha1: d4c56b0bed45b93ef1d81c94e00418657c4bc836
