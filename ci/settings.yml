@@ -126,8 +126,8 @@ jobs:
         BLOB_DIR:    kafka
         BLOB_NAME:   kafka
         BLOB_BINARY: kafka*.tgz
-        BLOB_URL:    https://github.com/kafka/kafka
-        BLOB_DESTINATION: kafka/kafka_2.12-${VERSION}.0.tgz
+        BLOB_URL:    https://archive.apache.org/dist/kafka/
+        BLOB_DESTINATION: kafka/kafka_2.12-${VERSION}.tgz
         BLOB_CLEANUP:     kafka/kafka_2.*
         AWS_ACCESS_KEY: (( grab meta.aws.access_key ))
         AWS_SECRET_KEY: (( grab meta.aws.secret_key ))
@@ -293,8 +293,8 @@ resources:
     type: apache-directory-index
     source:
       directory: https://archive.apache.org/dist/kafka/
-      folder_pattern: $VERSION.0
-      file_pattern: kafka_2.12-$VERSION.0.tgz
+      folder_pattern: $VERSION
+      file_pattern: kafka_2.12-$VERSION.tgz
   - name: spark
     type: apache-directory-index
     source:
