@@ -23,6 +23,10 @@ meta:
     vars-pr: (( grab meta.manifest.vars ))
     operator_file_paths: "" # comma separated list relative to repo root
 
+  git:
+    email:  (( param "Please provide the git email for automated commits" ))
+    name:   (( param "Please provide the git name for automated commits" ))
+
   image:
     name: starkandwayne/concourse
     tag: latest
@@ -267,7 +271,8 @@ jobs:
             NOTIFICATION_OUT: notifications
             BRANCH:        (( grab meta.github.branch ))
             GITHUB_OWNER:  (( grab meta.github.owner ))
-
+            GIT_EMAIL:      (( grab meta.git.email ))
+            GIT_NAME:       (( grab meta.git.name ))
             AWS_ACCESS_KEY:       (( grab meta.aws.access_key ))
             AWS_SECRET_KEY:       (( grab meta.aws.secret_key ))
 
@@ -277,7 +282,7 @@ jobs:
           rebase: true
           repository: pushme/git
       - name: tarball
-        put: s3
+        put: s3-tarball
         params:
           file:  (( concat "gh/artifacts/" meta.name "-*.tgz" ))
       - name: github-release
@@ -357,7 +362,7 @@ resources:
       repository:   (( grab meta.github.repo ))
       access_token: (( grab meta.github.access_token ))
 
-  - name: s3
+  - name: s3-tarball
     type: s3
     source:
       bucket:            (( grab meta.aws.bucket ))
