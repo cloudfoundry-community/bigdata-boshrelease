@@ -1,7 +1,7 @@
-cassandra/apache-cassandra-3.11.0-bin.tar.gz:
-  size: 37929669
-  object_id: 627fb678-646f-403c-4e7d-f3c8f812916d
-  sha: 96b84c1d178f8482e8832dfc850613e009e124dd
+cassandra/apache-cassandra-3.11.2-bin.tar.gz:
+  size: 38436262
+  object_id: 80dac9ef-797e-4abc-50a9-1d11c65d6f0a
+  sha: f52a65ffddeff553f2ac3f8f3fd3dd74317fe793
 kafka/kafka-manager-1.3.3.4.zip:
   size: 60436159
   object_id: 6daa8153-a955-4c40-7c4b-b10ee701d374
