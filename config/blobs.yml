@@ -14,10 +14,10 @@ openjdk/openjdk-1.8.0_101-x86_64-trusty.tar.gz:
   size: 77696717
   object_id: a06d4d64-0d5b-41c8-5edc-0c23e66efff6
   sha: d77ee059e289ae52fb87812f1a2932268427dc26
-spark/spark-2.2.1-bin-hadoop2.7.tgz:
-  size: 200934340
-  object_id: dbeecdbe-6f19-4ec1-7f9c-01582b144387
-  sha: a042492b0f914ba673afccd09496c46395641b32
+spark/spark-2.3.0-bin-hadoop2.7.tgz:
+  size: 226128401
+  object_id: 022430b3-a377-41a7-6aed-01ee6a35c37a
+  sha: 51347bf85fd9c4669e795a182e0d72853ddf8bf5
 zookeeper/zookeeper-3.4.10.tar.gz:
   size: 35042811
   object_id: 5004feb0-16f4-471f-7555-ddcc3f319692
